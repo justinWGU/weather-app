@@ -1,1 +1,64 @@
-<h1>{{name}}</h1>
+<div>
+  <h1>Justin Ortiz's Weather App</h1>
+  <input [(ngModel)]="city" placeholder="Enter city name">
+  <button (click)="fetchWeather()">Get Weather</button>
+
+  <div *ngIf="temperature">
+    <h2>Location: {{ location }}</h2>
+    <p>Temperature: {{ temperature }}</p>
+    <p>Condition: {{ condition }}</p>
+    <p>Wind: {{ wind }}</p>
+  </div>
+
+
+  <button (click)="showInfo()">Info</button>
+  <div *ngIf="description">
+    <h2>About PM Accelerator:</h2>
+    <p>
+      <strong>PM Accelerator</strong> is the premier AI learning and development hub, featuring award-winning AI products and mentors from top-tier companies such as Google, Meta, and Apple. We offer a dynamic AI PM Bootcamp, designed to empower the next generation of AI professionals through hands-on experience, mentorship, and real-world projects.
+    </p>
+
+    <h3>Role Overview:</h3>
+    <p>
+      We are seeking passionate and motivated Software Engineer Interns for the Fall 2024 semester (Spring 2025 internship is also available). This internship is ideal for individuals with a strong interest in AI, eager to learn and explore cutting-edge AI tools and frameworks. As part of our team, you will work on projects involving large language models (LLMs), machine learning, prompt engineering, GenAI application development, ChatGPT API integration, and data pipeline development. You will collaborate with a multidisciplinary team, including AI/software engineers, data scientists, product managers from our PM Accelerator community, and UI/UX designers, to bring innovative tech ideas to life.
+    </p>
+
+    <h3>Key Responsibilities:</h3>
+    <ul>
+      <li>Collaborate with product managers, designers, and data scientists to design and develop AI-driven and GenAI applications.</li>
+      <li>Engage in continuous learning and exploration of GenAI tools and frameworks, applying them in real-world scenarios.</li>
+      <li>Contribute to either front-end or back-end development, depending on your expertise.</li>
+      <li>Execute the integration of AI technologies, including LLMs, machine learning models, prompt engineering, and various APIs, into applications.</li>
+      <li>Contribute to the creation and optimization of data pipelines supporting AI models and product features.</li>
+      <li>Participate in regular team meetings and contribute to the agile development process.</li>
+    </ul>
+
+    <h3>Required Skills:</h3>
+    <ul>
+      <li>Strong interest in AI and a willingness to learn and explore GenAI tools and frameworks.</li>
+      <li>Programming skills in languages such as Python, JavaScript, or similar.</li>
+      <li>Front-end and back-end engineers are welcome; full-stack developers are preferred.</li>
+      <li>Excellent problem-solving skills and ability to work in a collaborative environment.</li>
+      <li>Strong communication skills, both written and verbal.</li>
+    </ul>
+
+    <h3>Preferred Skills:</h3>
+    <ul>
+      <li>Understanding of machine learning concepts and frameworks (e.g., TensorFlow, PyTorch).</li>
+      <li>Experience with prompt engineering and API integration, particularly with GenAI tools like ChatGPT.</li>
+      <li>Familiarity with data pipelines and databases (SQL, NoSQL).</li>
+    </ul>
+
+    <h3>Benefits:</h3>
+    <ul>
+      <li>Hands-On Experience: Master the skills needed to develop and launch real-life GenAI products, a significant advantage for your future career.</li>
+      <li>Free AI Engineer Certification: Upon successful completion of the internship, you will receive an AI Engineer Certification.</li>
+      <li>LinkedIn Recognition: Add your role as an AI Engineer to your LinkedIn experience section, highlighting your work on the project.</li>
+      <li>Tech Advisor Support: Access weekly office hours hosted by our tech advisors to help guide your development.</li>
+      <li>Educational Resources: Gain access to recommended tech courses tailored for developers and data scientists.</li>
+      <li>Networking Opportunities: Connect with AI/ML engineer job referral opportunities within our AI Project community channel.</li>
+      <li>School Credit: Eligible to receive school credit if required by your university.</li>
+      <li>Fully-remote: We welcome qualified candidates from all over the world to apply for this position.</li>
+    </ul>
+  </div>
+</div>

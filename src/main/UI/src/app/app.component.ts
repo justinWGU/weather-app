@@ -1,23 +1,37 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {HelloService} from "./service/hello.service";
+import {WeatherService} from "./service/weather.service";
+import {FormsModule} from "@angular/forms";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FormsModule, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
-  title = 'weather-app';
-  name: string = '';
+export class AppComponent {
 
-  constructor(private helloService: HelloService) {} // creates and injects service to make http req
+  city: string = '';
+  temperature: string = '';
+  location: string = '';
+  condition: string = '';
+  wind: string = '';
+  description: boolean = false;
+  title: string = '';
+  constructor(private weatherService: WeatherService) { }
 
-  ngOnInit() {
-    this.helloService.getHelloMessage().subscribe(response => {
-      this.name = response;
-    })
+  fetchWeather() {
+    this.weatherService.getWeather(this.city).subscribe(data => {
+      const weatherData = JSON.parse(data);
+      this.temperature = `${weatherData.current.temp_c}°C (${weatherData.current.temp_f}°F)`;
+      this.location = `${weatherData.location.name}, ${weatherData.location.region}, ${weatherData.location.country}`;
+      this.condition = weatherData.current.condition.text;
+      this.wind = `${weatherData.current.wind_mph} mph (${weatherData.current.wind_kph} kph) ${weatherData.current.wind_dir}`;
+    });
+  }
+  showInfo() {
+    this.description = true;
   }
 }
