@@ -1,0 +1,7 @@
+// interface APIWeatherData {
+  
+// }
+
+// interface CurrentWeatherProps {
+
+// }
