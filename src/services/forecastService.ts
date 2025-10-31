@@ -1,0 +1,1 @@
+// https://api.open-meteo.com/v1/forecast?latitude=33.9533&longitude=-117.3953&daily=temperature_2m_max&timezone=America/Los_Angeles&daily=temperature_2m_min&temperature_unit=fahrenheit&forecast_days=7&hourly&daily=weather_code
