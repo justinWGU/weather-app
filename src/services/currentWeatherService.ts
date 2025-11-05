@@ -1,1 +1,0 @@
-// https://api.open-meteo.com/v1/forecast?latitude=33.9533&longitude=-117.3953&temperature_unit=fahrenheit&current=temperature,weather_code,wind_speed_10m
