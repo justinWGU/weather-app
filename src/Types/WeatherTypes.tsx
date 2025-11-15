@@ -1,5 +1,6 @@
 export interface CitySearchBoxProps {
-  setCity: React.Dispatch<React.SetStateAction<string>>;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  inputRef: React.RefObject<HTMLInputElement | null>;
 }
 
 export interface CurrentWeatherProps {
@@ -19,6 +20,7 @@ export interface HourlyForecastProps {
   hour: number;
   condition: number;
   temp: number;
+  border: string;
 }
 
 export interface HourlyForecastContainerProps {
@@ -34,8 +36,16 @@ export interface WeeklyForecastContainerProps {
   minTemps: Array<number>;
 }
 
+export interface AirConditions {
+  realFeel: number;
+  chOfRain: number;
+  wind: number;
+  uv: number;
+}
+
 export interface WeatherData {
   currentWeatherData: CurrentWeatherProps;
   hourlyForecastData: HourlyForecastContainerProps;
   weeklyForecastData: WeeklyForecastContainerProps;
+  airConditions: AirConditions;
 }

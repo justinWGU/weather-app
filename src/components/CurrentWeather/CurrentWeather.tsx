@@ -1,11 +1,17 @@
 import type { CurrentWeatherProps } from "../../Types/WeatherTypes";
+import { selectIcon } from "../../utils/selectIcon.ts";
 
 function CurrentWeather( { temp, city, condition }: CurrentWeatherProps) {
+  
   return (
-    <div className=' bg-gray-600 rounded-2xl border border-red-400 col-span-2 row-start-3 row-span-4 grid grid-rows-2 grid-col-3'>
-      <div className='col-start-1'>{city}</div>
-      <div className='col-start-2'>{temp}</div>
-      <div className='row-span-2'>{condition}</div>
+    <>
+    <div className='m-5 rounded-2xl p-[25px] flex items-center justify-between'>
+      <div className='text-4xl ml-5 flex flex-col'>
+        <div className='my-5'>{city}</div>
+        <div className='my-5'>{temp}°</div>
+      </div>
+      <img className='mr-25' src={selectIcon(condition)} alt={selectIcon(condition)} height={150} width={150}/>
     </div>
+    </>
   );
 } export default CurrentWeather; 

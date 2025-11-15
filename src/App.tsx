@@ -3,7 +3,7 @@ import Weather from './pages/Weather/Weather'
 
 function App() {
   return (
-    <div className='App'>
+    <div className='h-full'>
       <Weather />
     </div>
   )

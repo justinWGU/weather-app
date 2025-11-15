@@ -15,14 +15,16 @@ export function useWeather( city: string ): UseWeatherData {
 
   useEffect( () => {
     async function getData() {
+      setLoading(true);
       try {
         const data = await weatherService(city);
         setLoading(false);
         setData(data);
       }
       catch (err) {
+        setLoading(false);
         setError(true);
-        console.error('Error occurred trying to get data: ', err);
+        console.error(err);
       }    
     }
     getData();
